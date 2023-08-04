@@ -1,6 +1,6 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial\Exceptions;
+namespace Thainph\LaravelMysqlSpatial\Exceptions;
 
 class UnknownWKTTypeException extends \RuntimeException
 {

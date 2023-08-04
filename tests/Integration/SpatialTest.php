@@ -1,11 +1,11 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Types\GeometryCollection;
-use Grimzy\LaravelMysqlSpatial\Types\LineString;
-use Grimzy\LaravelMysqlSpatial\Types\MultiPoint;
-use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
-use Grimzy\LaravelMysqlSpatial\Types\Polygon;
+use Thainph\LaravelMysqlSpatial\Types\GeometryCollection;
+use Thainph\LaravelMysqlSpatial\Types\LineString;
+use Thainph\LaravelMysqlSpatial\Types\MultiPoint;
+use Thainph\LaravelMysqlSpatial\Types\MultiPolygon;
+use Thainph\LaravelMysqlSpatial\Types\Point;
+use Thainph\LaravelMysqlSpatial\Types\Polygon;
 
 class SpatialTest extends IntegrationBaseTestCase
 {
@@ -20,7 +20,7 @@ class SpatialTest extends IntegrationBaseTestCase
         $geo->geometry = new Point(1, 2);
         $geo->save();
 
-        $this->assertException(\Grimzy\LaravelMysqlSpatial\Exceptions\SpatialFieldsNotDefinedException::class);
+        $this->assertException(\Thainph\LaravelMysqlSpatial\Exceptions\SpatialFieldsNotDefinedException::class);
         NoSpatialFieldsModel::all();
     }
 
@@ -241,7 +241,7 @@ class SpatialTest extends IntegrationBaseTestCase
         $loc = new GeometryModel();
         $loc->location = new Point(1, 1);
 
-        $this->assertException(\Grimzy\LaravelMysqlSpatial\Exceptions\UnknownSpatialFunctionException::class);
+        $this->assertException(\Thainph\LaravelMysqlSpatial\Exceptions\UnknownSpatialFunctionException::class);
         GeometryModel::orderBySpatial('location', $loc->location, 'does-not-exist')->get();
     }
 
@@ -315,9 +315,9 @@ class SpatialTest extends IntegrationBaseTestCase
     //public function testBounding() {
     //    $point = new Point(0, 0);
     //
-    //    $linestring1 = \Grimzy\LaravelMysqlSpatial\Types\LineString::fromWkt("LINESTRING(1 1, 2 2)");
-    //    $linestring2 = \Grimzy\LaravelMysqlSpatial\Types\LineString::fromWkt("LINESTRING(20 20, 24 24)");
-    //    $linestring3 = \Grimzy\LaravelMysqlSpatial\Types\LineString::fromWkt("LINESTRING(0 10, 10 10)");
+    //    $linestring1 = \Thainph\LaravelMysqlSpatial\Types\LineString::fromWkt("LINESTRING(1 1, 2 2)");
+    //    $linestring2 = \Thainph\LaravelMysqlSpatial\Types\LineString::fromWkt("LINESTRING(20 20, 24 24)");
+    //    $linestring3 = \Thainph\LaravelMysqlSpatial\Types\LineString::fromWkt("LINESTRING(0 10, 10 10)");
     //
     //    $geo1 = new GeometryModel();
     //    $geo1->location = $point;

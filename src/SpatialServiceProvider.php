@@ -1,17 +1,17 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial;
+namespace Thainph\LaravelMysqlSpatial;
 
 use Doctrine\DBAL\Types\Type as DoctrineType;
-use Grimzy\LaravelMysqlSpatial\Connectors\ConnectionFactory;
-use Grimzy\LaravelMysqlSpatial\Doctrine\Geometry;
-use Grimzy\LaravelMysqlSpatial\Doctrine\GeometryCollection;
-use Grimzy\LaravelMysqlSpatial\Doctrine\LineString;
-use Grimzy\LaravelMysqlSpatial\Doctrine\MultiLineString;
-use Grimzy\LaravelMysqlSpatial\Doctrine\MultiPoint;
-use Grimzy\LaravelMysqlSpatial\Doctrine\MultiPolygon;
-use Grimzy\LaravelMysqlSpatial\Doctrine\Point;
-use Grimzy\LaravelMysqlSpatial\Doctrine\Polygon;
+use Thainph\LaravelMysqlSpatial\Connectors\ConnectionFactory;
+use Thainph\LaravelMysqlSpatial\Doctrine\Geometry;
+use Thainph\LaravelMysqlSpatial\Doctrine\GeometryCollection;
+use Thainph\LaravelMysqlSpatial\Doctrine\LineString;
+use Thainph\LaravelMysqlSpatial\Doctrine\MultiLineString;
+use Thainph\LaravelMysqlSpatial\Doctrine\MultiPoint;
+use Thainph\LaravelMysqlSpatial\Doctrine\MultiPolygon;
+use Thainph\LaravelMysqlSpatial\Doctrine\Point;
+use Thainph\LaravelMysqlSpatial\Doctrine\Polygon;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\DatabaseServiceProvider;
 

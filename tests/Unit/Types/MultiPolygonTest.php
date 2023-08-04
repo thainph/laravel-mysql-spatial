@@ -1,9 +1,9 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Types\LineString;
-use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
-use Grimzy\LaravelMysqlSpatial\Types\Polygon;
+use Thainph\LaravelMysqlSpatial\Types\LineString;
+use Thainph\LaravelMysqlSpatial\Types\MultiPolygon;
+use Thainph\LaravelMysqlSpatial\Types\Point;
+use Thainph\LaravelMysqlSpatial\Types\Polygon;
 
 class MultiPolygonTest extends BaseTestCase
 {
@@ -66,7 +66,7 @@ class MultiPolygonTest extends BaseTestCase
     public function testInvalidGeoJsonException()
     {
         $this->assertException(
-            \Grimzy\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class,
+            \Thainph\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class,
             sprintf('Expected %s, got %s', GeoJson\Geometry\MultiPolygon::class, GeoJson\Geometry\Point::class)
         );
         MultiPolygon::fromJson('{"type":"Point","coordinates":[3.4,1.2]}');
@@ -82,7 +82,7 @@ class MultiPolygonTest extends BaseTestCase
     {
         $this->assertException(
             InvalidArgumentException::class,
-            'Grimzy\LaravelMysqlSpatial\Types\MultiPolygon must contain at least 1 entry'
+            'Thainph\LaravelMysqlSpatial\Types\MultiPolygon must contain at least 1 entry'
         );
         $multipolygon = new MultiPolygon([]);
     }
@@ -91,7 +91,7 @@ class MultiPolygonTest extends BaseTestCase
     {
         $this->assertException(
             InvalidArgumentException::class,
-            'Grimzy\LaravelMysqlSpatial\Types\MultiPolygon must be a collection of Grimzy\LaravelMysqlSpatial\Types\Polygon'
+            'Thainph\LaravelMysqlSpatial\Types\MultiPolygon must be a collection of Thainph\LaravelMysqlSpatial\Types\Polygon'
         );
         $multipolygon = new MultiPolygon([
             $this->getPolygon1(),
@@ -118,7 +118,7 @@ class MultiPolygonTest extends BaseTestCase
         // assert invalid
         $this->assertException(
             InvalidArgumentException::class,
-            'Grimzy\LaravelMysqlSpatial\Types\MultiPolygon must be a collection of Grimzy\LaravelMysqlSpatial\Types\Polygon'
+            'Thainph\LaravelMysqlSpatial\Types\MultiPolygon must be a collection of Thainph\LaravelMysqlSpatial\Types\Polygon'
         );
         $multipolygon[] = 1;
     }
